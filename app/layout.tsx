@@ -15,25 +15,25 @@ const anton = Anton({
 })
 
 export const metadata: Metadata = {
-  title: 'Osteologia Veterinária | Coleção Visual de Ossos, Acidentes e Espécies',
+  title: 'Gasometria Arterial — Guia Visual de Estudos',
   description:
-    'Uma coleção visual de Osteologia Veterinária com 6 volumes e cerca de 150 páginas: ossos, acidentes ósseos, vistas anatômicas e comparações entre canino, equino, bovino e suíno. Acesso imediato.',
+    'Guia digital em PDF com 60 páginas para relacionar pH, PaCO₂ e bicarbonato com fluxogramas, explicações visuais e 14 casos comentados. R$ 24,90, pagamento único.',
   generator: 'v0.app',
 
   openGraph: {
-    title: 'Osteologia Veterinária | Coleção Visual de Ossos, Acidentes e Espécies',
+    title: 'Gasometria Arterial — Guia Visual de Estudos',
     description:
-      'Ossos, acidentes ósseos, vistas anatômicas e diferenças entre espécies organizados visualmente para estudar com clareza e revisar antes da prova prática. Acesso imediato e 7 dias de garantia.',
+      'Fundamentos, distúrbios ácido-base, compensação, oxigenação e 14 casos comentados em um guia visual de 60 páginas. 7 dias de garantia.',
     type: 'website',
     locale: 'pt_BR',
-    siteName: 'Osteologia Veterinária',
+    siteName: 'Gasometria Arterial — Guia Visual de Estudos',
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Osteologia Veterinária',
+    title: 'Gasometria Arterial — Guia Visual de Estudos',
     description:
-      'Coleção visual de Osteologia Veterinária para reconhecer, identificar e revisar as estruturas ósseas. Acesso imediato e 7 dias de garantia.',
+      'Guia visual de 60 páginas para estudar e revisar a interpretação da gasometria arterial. 7 dias de garantia.',
   },
 
   icons: {

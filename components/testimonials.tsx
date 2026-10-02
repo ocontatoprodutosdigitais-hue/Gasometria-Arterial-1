@@ -1,91 +1,62 @@
-import { Quote } from 'lucide-react';
+import { BookOpen, ListChecks, Brain } from 'lucide-react';
 
-function StarRow() {
-  return (
-    <div className="flex items-center gap-1" aria-label="Avaliação de 5 estrelas">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#FBBF24" aria-hidden="true">
-          <path d="M12 2.5l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8-6.2-3.7-6.2 3.7 1.6-6.8-5.2-4.6 6.9-.6z" />
-        </svg>
-      ))}
-    </div>
-  );
-}
-
-const depoimentos = [
+const beneficios = [
   {
-    text: 'Eu sempre me perdia quando precisava revisar Osteologia porque tinha muita coisa espalhada entre slides, anotações e livros. Ter tudo organizado visualmente em um só material facilitou muito meus estudos.',
-    name: 'Mariana Alves',
-    role: 'Estudante de Medicina Veterinária',
-    image: '/images/osteo/depoimento-mariana.webp',
+    icon: BookOpen,
+    title: 'Para entender os fundamentos',
+    text: 'Comece pelo significado dos parâmetros e pela relação entre pH, PaCO₂ e bicarbonato antes de avançar para os distúrbios.',
   },
   {
-    text: 'Usei principalmente nos dias antes da prova e foi o que mais gostei. Em poucos minutos eu conseguia passar pelos pontos mais importantes sem precisar reler páginas e páginas de conteúdo.',
-    name: 'Camila Rocha',
-    role: 'Estudante de Medicina Veterinária',
-    image: '/images/osteo/depoimento-camila.webp',
+    icon: ListChecks,
+    title: 'Para organizar a revisão',
+    text: 'Localize o assunto no mapa do conteúdo e consulte explicações, comparações e fórmulas conforme a sua dúvida.',
   },
   {
-    text: 'O material ficou muito mais prático do que eu imaginava. Abro no celular, escolho a parte que quero estudar e já consigo revisar sem ficar procurando imagem e explicação em vários lugares diferentes.',
-    name: 'Lucas Ferreira',
-    role: 'Estudante de Medicina Veterinária',
-    image: '/images/osteo/depoimento-lucas.webp',
+    icon: Brain,
+    title: 'Para praticar o raciocínio',
+    text: 'Resolva os casos sem olhar os comentários, justifique sua interpretação e depois confira cada etapa.',
   },
 ];
 
 export function Testimonials() {
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#F3EBDD' }}>
+    <section className="w-full py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#F0EBF8' }}>
       <div className="mobile-content">
         <div className="flex flex-col items-center text-center gap-4 mb-12 md:mb-16">
-          <h2 className="font-grotesk text-3xl sm:text-4xl md:text-5xl leading-tight text-pretty" style={{ color: '#5A3A27' }}>
-            Relatos de quem já Utiliza o Material
+          <h2 className="font-grotesk text-3xl sm:text-4xl md:text-5xl leading-tight text-pretty" style={{ color: '#142B49' }}>
+            Um Guia para Diferentes Momentos do Seu Estudo
           </h2>
-          <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl" style={{ color: '#8A7862' }}>
-            Veja as experiências de quem passou a estudar e revisar osteologia com mais clareza.
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl" style={{ color: '#526176' }}>
+            Para começar pelo básico, retomar conceitos ou praticar a interpretação, encontre uma sequência organizada para acompanhar seu estudo.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {depoimentos.map((d, i) => (
-            <div
-              key={i}
-              className="flex flex-col gap-5 p-8 md:p-9"
-              style={{ backgroundColor: '#FBF8F2', border: '1px solid rgba(157,78,53,0.15)', borderRadius: '20px', boxShadow: '0 8px 24px rgba(47,41,37,0.07)' }}
-            >
-              <div className="flex items-center justify-between">
-                <StarRow />
-                <Quote size={22} style={{ color: 'rgba(157,78,53,0.4)' }} aria-hidden="true" />
-              </div>
-
-              <p className="text-sm md:text-base leading-relaxed" style={{ color: '#2F2925' }}>
-                {'\u201C'}{d.text}{'\u201D'}
-              </p>
-
-              <div className="mt-auto pt-2 flex items-center gap-3">
-                <div
-                  className="w-12 h-12 rounded-full flex-shrink-0 overflow-hidden"
-                  style={{ boxShadow: '0 2px 6px rgba(47,41,37,0.15)' }}
+          {beneficios.map((b) => {
+            const Icon = b.icon;
+            return (
+              <div
+                key={b.title}
+                className="flex flex-col gap-5 p-8 md:p-9"
+                style={{ backgroundColor: '#FFFFFF', border: '1px solid #DCE5EC', borderRadius: '20px', boxShadow: '0 8px 24px rgba(20,43,73, 0.07)' }}
+              >
+                <span
+                  className="flex items-center justify-center rounded-xl"
+                  style={{ width: '48px', height: '48px', backgroundColor: '#E8F5F4', color: '#087F8C' }}
                 >
-                  <img
-                    src={d.image || "/placeholder.svg"}
-                    alt={`Foto de ${d.name}, ${d.role}`}
-                    className="w-full h-full object-cover"
-                    style={{ objectPosition: 'center 20%' }}
-                    loading="lazy"
-                  />
-                </div>
-                <div className="flex flex-col text-left">
-                  <span className="font-semibold text-sm" style={{ color: '#5A3A27' }}>
-                    {d.name}
-                  </span>
-                  <span className="text-xs" style={{ color: '#8A7862' }}>
-                    {d.role}
-                  </span>
-                </div>
+                  <Icon size={24} strokeWidth={2} aria-hidden="true" />
+                </span>
+
+                <h3 className="font-grotesk text-lg sm:text-xl leading-tight" style={{ color: '#142B49' }}>
+                  {b.title}
+                </h3>
+
+                <p className="text-sm md:text-base leading-relaxed" style={{ color: '#24364B' }}>
+                  {b.text}
+                </p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,117 +1,91 @@
 'use client';
 
-import { Star } from 'lucide-react';
-
-const bonuses = [
+// Image files still show the previous product; alt keeps describing the real file until the images are replaced.
+const recursos = [
   {
-    label: 'BÔNUS 1',
-    name: 'Revisão Express de Osteologia',
+    label: 'RECURSO 1',
+    name: '14 Casos Comentados',
     description:
-      'Um material de consulta rápida com os principais pontos da osteologia organizados de forma visual e objetiva para revisar o conteúdo antes das aulas, provas e avaliações.',
-    oldPrice: 'De R$ 17,00',
+      'Casos fictícios com diferentes padrões ácido-base e de oxigenação, acompanhados de comentários para conferir o raciocínio.',
     image: '/images/osteo/bonus-revisao-express.webp',
+    alt: 'Capa do bônus: Revisão Express de Osteologia',
   },
   {
-    label: 'BÔNUS 2',
-    name: 'Teste Sua Identificação',
+    label: 'RECURSO 2',
+    name: 'Roteiro de Interpretação',
     description:
-      'Coleção de exercícios visuais para praticar a identificação de ossos, estruturas e acidentes ósseos, acompanhados de gabarito para conferir as respostas.',
-    oldPrice: 'De R$ 19,90',
+      'Uma sequência de consulta para reunir contexto, parâmetros, resposta esperada, gap, oxigenação e síntese.',
     image: '/images/osteo/bonus-teste-identificacao.webp',
+    alt: 'Capa do bônus: Teste Sua Identificação',
   },
   {
-    label: 'BÔNUS 3',
-    name: 'Flashcards de Osteologia Veterinária',
+    label: 'RECURSO 3',
+    name: 'Fórmulas e Revisão Final',
     description:
-      'Cartões de estudo desenvolvidos para facilitar a memorização das principais estruturas ósseas através de revisões rápidas, práticas e repetitivas.',
-    oldPrice: 'De R$ 24,00',
+      'Fórmulas, siglas, erros frequentes e checklist para consultar os pontos essenciais durante o estudo.',
     image: '/images/osteo/bonus-flashcards.webp',
+    alt: 'Capa do bônus: Flashcards de Osteologia Veterinária',
   },
 ];
 
-function StarRow() {
-  return (
-    <div className="flex items-center gap-0.5" aria-hidden="true">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star key={i} size={14} fill="#FBBF24" strokeWidth={0} />
-      ))}
-    </div>
-  );
-}
-
 export function BonusSection() {
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#2F2925' }}>
+    <section className="w-full py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#142B49' }}>
       <div className="mobile-content">
-        {/* Cabeçalho */}
         <div className="flex flex-col items-center text-center gap-3 md:gap-4 mb-10 md:mb-14">
-          <span className="font-grotesk text-xs sm:text-sm font-bold uppercase tracking-[0.2em]" style={{ color: '#D8845E' }}>
-            Bônus Inclusos
+          <span className="font-grotesk text-xs sm:text-sm font-bold uppercase tracking-[0.2em]" style={{ color: '#F7D8D1' }}>
+            Recursos Inclusos
           </span>
-          <h2 className="font-grotesk text-3xl sm:text-4xl md:text-5xl leading-tight text-balance" style={{ color: '#FBF8F2' }}>
-            Além do Material Principal, Você Recebe Mais 3 Bônus
+          <h2 className="font-grotesk text-3xl sm:text-4xl md:text-5xl leading-tight text-balance" style={{ color: '#FFFFFF' }}>
+            Além das Explicações, Você Conta com 3 Recursos de Estudo
           </h2>
-          <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(251,248,242,0.90)' }}>
-            Recursos extras para complementar seus estudos e reforçar os principais conteúdos de Osteologia.
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255, 0.90)' }}>
+            Recursos integrados ao próprio guia para praticar, revisar e acompanhar a interpretação.
           </p>
         </div>
 
-        {/* Cards: empilhados no mobile, lado a lado no desktop */}
         <div className="mx-auto flex max-w-5xl flex-col items-stretch gap-6 lg:flex-row lg:gap-6">
-          {bonuses.map((bonus) => (
+          {recursos.map((recurso) => (
             <div
-              key={bonus.label}
+              key={recurso.label}
               className="bonus-card flex w-full flex-col rounded-[20px] p-5 sm:p-6"
               style={{
-                backgroundColor: '#FBF8F2',
-                border: '1px solid rgba(90,58,39,0.15)',
-                boxShadow: '0 12px 30px rgba(47, 41, 37, 0.28)',
+                backgroundColor: '#FAFBFC',
+                border: '1px solid #DCE5EC',
+                boxShadow: '0 12px 30px rgba(20,43,73, 0.28)',
                 transition: 'all 250ms ease',
               }}
             >
-              {/* Badge */}
               <span
                 className="self-start rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide"
-                style={{ backgroundColor: '#5A3A27', color: '#FBF8F2' }}
+                style={{ backgroundColor: '#142B49', color: '#FFFFFF' }}
               >
-                {bonus.label}
+                {recurso.label}
               </span>
 
-              {/* Mockup */}
               <div className="mt-4 flex justify-center">
                 <img
-                  src={bonus.image || '/placeholder.svg'}
-                  alt={`Capa do bônus: ${bonus.name}`}
+                  src={recurso.image || '/placeholder.svg'}
+                  alt={recurso.alt}
                   className="w-full max-w-[320px] h-auto object-contain drop-shadow-xl"
                   loading="lazy"
                 />
               </div>
 
-              {/* Estrelas */}
-              <div className="mt-4">
-                <StarRow />
-              </div>
-
-              {/* Nome */}
-              <h3 className="mt-3 font-grotesk text-base sm:text-lg leading-snug" style={{ color: '#5A3A27' }}>
-                {bonus.name}
+              <h3 className="mt-4 font-grotesk text-base sm:text-lg leading-snug" style={{ color: '#142B49' }}>
+                {recurso.name}
               </h3>
 
-              {/* Descrição */}
-              <p className="mt-2 flex-1 text-sm leading-relaxed" style={{ color: '#8A7862' }}>
-                {bonus.description}
+              <p className="mt-2 flex-1 text-sm leading-relaxed" style={{ color: '#526176' }}>
+                {recurso.description}
               </p>
 
-              {/* Preço + selo */}
-              <div className="mt-5 flex items-center justify-between gap-3 border-t pt-4" style={{ borderColor: 'rgba(90,58,39,0.15)' }}>
-                <span className="text-sm line-through" style={{ color: '#8A7862' }}>
-                  {bonus.oldPrice}
-                </span>
+              <div className="mt-5 flex items-center justify-end gap-3 border-t pt-4" style={{ borderColor: '#DCE5EC' }}>
                 <span
                   className="rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-wide"
-                  style={{ backgroundColor: '#22C55E', color: '#FFFFFF' }}
+                  style={{ backgroundColor: '#087F8C', color: '#FFFFFF' }}
                 >
-                  Hoje grátis
+                  Incluso no guia
                 </span>
               </div>
             </div>
@@ -122,8 +96,8 @@ export function BonusSection() {
       <style>{`
         .bonus-card:hover {
           transform: translateY(-4px);
-          border-color: #9D4E35;
-          box-shadow: 0 20px 42px rgba(47, 41, 37, 0.34);
+          border-color: #087F8C;
+          box-shadow: 0 20px 42px rgba(20,43,73, 0.34);
         }
       `}</style>
     </section>

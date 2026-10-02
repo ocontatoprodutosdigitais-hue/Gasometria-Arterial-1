@@ -7,45 +7,45 @@ export function FAQ() {
 
   const faqItems = [
     {
-      q: 'Para quem é este material de Osteologia Veterinária?',
-      a: 'O material foi criado principalmente para estudantes de Medicina Veterinária que querem estudar e revisar Osteologia de forma mais visual, organizada e prática.',
+      q: 'Para quem é este guia de Gasometria Arterial?',
+      a: 'Para quem deseja estudar, revisar ou compreender melhor a gasometria arterial. O conteúdo reúne fundamentos, etapas de interpretação, distúrbios, oxigenação e casos comentados para acompanhar diferentes momentos do estudo.',
     },
     {
-      q: 'Quais espécies aparecem no material?',
-      a: 'O conteúdo apresenta comparações entre canino, equino, bovino e suíno, destacando estruturas e diferenças anatômicas importantes entre as espécies.',
+      q: 'O que está incluído no material?',
+      a: 'Um guia digital em PDF com 60 páginas, incluindo explicações visuais, fluxogramas, comparações, fórmulas, 14 casos comentados e recursos de revisão. Os casos e os recursos de consulta já fazem parte dessas 60 páginas.',
     },
     {
-      q: 'O material substitui livros e aulas da faculdade?',
-      a: 'Não. Ele funciona como um material complementar de estudo e revisão, ajudando você a visualizar melhor as estruturas e organizar os principais conteúdos de Osteologia.',
+      q: 'O guia substitui livros, aulas ou avaliação profissional?',
+      a: 'Ele funciona como material complementar de estudo e consulta. Não substitui livros, aulas, protocolos ou avaliação profissional, e os exemplos apresentados são fictícios.',
     },
     {
       q: 'O material é físico ou digital?',
-      a: 'O material é 100% digital. Após a confirmação da compra, você receberá acesso para consultar os conteúdos online.',
+      a: 'O material é digital, em PDF. Você não receberá um produto físico pelos Correios.',
     },
     {
       q: 'Posso acessar pelo celular?',
-      a: 'Sim. Você pode acessar pelo celular, tablet ou computador sempre que precisar estudar ou revisar.',
+      a: 'Sim. O PDF pode ser aberto no celular, tablet ou computador. Para visualizar detalhes das páginas, você pode ampliar a imagem ou estudar em uma tela maior.',
     },
     {
       q: 'Posso imprimir?',
-      a: 'Sim. As páginas podem ser utilizadas digitalmente e também impressas para estudo pessoal.',
+      a: 'Sim. Você pode imprimir o PDF para uso pessoal e organizar suas revisões da forma que preferir.',
     },
     {
-      q: 'Como receberei o acesso e por quanto tempo poderei usar?',
-      a: 'Após a confirmação do pagamento, você receberá as instruções de acesso no e-mail informado na compra. O acesso é vitalício, para consultar o material sempre que precisar.',
+      q: 'Como receberei o acesso?',
+      a: 'As instruções de acesso serão disponibilizadas após a confirmação do pagamento, pelo canal informado no checkout. O produto é um PDF com pagamento único, sem mensalidade.',
     },
     {
       q: 'Como funciona a garantia?',
-      a: 'Você terá 7 dias de garantia após a compra. Dentro desse período, caso o material não atenda às suas expectativas, poderá solicitar o reembolso conforme as regras da plataforma de pagamento.',
+      a: 'Você tem 7 dias para conhecer o material. Caso ele não atenda às suas expectativas, poderá solicitar o reembolso pelo canal de atendimento informado na compra, dentro desse prazo.',
     },
   ];
 
   return (
-    <section className="w-full py-14 px-0" style={{ backgroundColor: '#2F2925' }}>
+    <section className="w-full py-14 px-0" style={{ backgroundColor: '#142B49' }}>
       <div className="mobile-content">
         <h2
           className="font-grotesk text-center"
-          style={{ color: '#FBF8F2', fontSize: '32px', fontWeight: 600, marginBottom: '28px', lineHeight: 1.2 }}
+          style={{ color: '#FAFBFC', fontSize: '32px', fontWeight: 600, marginBottom: '28px', lineHeight: 1.2 }}
         >
           Perguntas Frequentes
         </h2>
@@ -57,11 +57,11 @@ export function FAQ() {
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#FBF8F2',
-                  border: '1px solid rgba(90,58,39,0.18)',
+                  backgroundColor: '#FAFBFC',
+                  border: '1px solid #DCE5EC',
                   borderRadius: '16px',
                   overflow: 'hidden',
-                  boxShadow: '0 5px 14px rgba(47, 41, 37, 0.18)',
+                  boxShadow: '0 5px 14px rgba(20,43,73, 0.18)',
                   width: '100%',
                 }}
               >
@@ -74,7 +74,7 @@ export function FAQ() {
                   <span
                     className="text-left"
                     style={{
-                      color: '#2F2925',
+                      color: '#24364B',
                       fontSize: '15px',
                       fontWeight: 700,
                       lineHeight: 1.35,
@@ -86,7 +86,7 @@ export function FAQ() {
                   <span
                     className="transition-transform duration-200"
                     style={{
-                      color: '#9D4E35',
+                      color: '#087F8C',
                       fontSize: '20px',
                       fontWeight: 700,
                       flexShrink: 0,
@@ -108,14 +108,14 @@ export function FAQ() {
                 >
                   <div
                     style={{
-                      borderTop: '1px solid rgba(90,58,39,0.18)',
-                      backgroundColor: '#F3EBDD',
+                      borderTop: '1px solid #DCE5EC',
+                      backgroundColor: '#E8F5F4',
                       padding: '19px 18px',
                     }}
                   >
                     <p
                       className="text-left"
-                      style={{ color: '#2F2925', fontSize: '15px', lineHeight: 1.6 }}
+                      style={{ color: '#24364B', fontSize: '15px', lineHeight: 1.6 }}
                     >
                       {item.a}
                     </p>

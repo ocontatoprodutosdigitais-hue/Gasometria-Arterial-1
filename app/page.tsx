@@ -15,58 +15,58 @@ import { FAQ } from '@/components/faq';
 import { FinalCta } from '@/components/final-cta';
 import { Footer } from '@/components/footer';
 
-// Páginas internas reais da coleção de Osteologia Veterinária
+// Image files still show the previous product; alt keeps describing the real file until the images are replaced.
 const carrossel1 = [
-  { image: '/images/osteo/pg-costela.webp', title: 'Como Reconhecer e Orientar uma Costela', tag: 'Vol. 5 · Tórax' },
-  { image: '/images/osteo/pg-vertebras-toracicas.webp', title: 'Vértebras Torácicas — Comparação entre Espécies', tag: 'Vol. 4 · Coluna' },
-  { image: '/images/osteo/pg-cranio-ventral.webp', title: 'Crânio — Vista Ventral', tag: 'Vol. 5 · Crânio' },
-  { image: '/images/osteo/pg-vertebras-cervicais.webp', title: 'Vértebras Cervicais — Comparação entre Espécies', tag: 'Vol. 4 · Coluna' },
-  { image: '/images/osteo/pg-vistas-cranio.webp', title: 'Como Identificar as Vistas do Crânio', tag: 'Vol. 5 · Crânio' },
-  { image: '/images/osteo/pg-cranio.webp', title: 'Crânio — Estrutura e Comparação', tag: 'Vol. 6 · Crânio' },
-  { image: '/images/osteo/pg-mapa-torax.webp', title: 'Mapa Visual do Tórax Veterinário', tag: 'Vol. 5 · Tórax' },
-  { image: '/images/osteo/pg-sacro.webp', title: 'Sacro — Identificação e Comparação', tag: 'Vol. 3 · Membro Pélvico' },
+  { image: '/images/osteo/pg-costela.webp', title: 'Visão Geral da Interpretação', alt: 'Como Reconhecer e Orientar uma Costela' },
+  { image: '/images/osteo/pg-vertebras-toracicas.webp', title: 'Como Ler um Laudo', alt: 'Vértebras Torácicas — Comparação entre Espécies' },
+  { image: '/images/osteo/pg-cranio-ventral.webp', title: 'pH: O Estado Ácido-Base', alt: 'Crânio — Vista Ventral' },
+  { image: '/images/osteo/pg-vertebras-cervicais.webp', title: 'PaCO₂: O Componente Respiratório', alt: 'Vértebras Cervicais — Comparação entre Espécies' },
+  { image: '/images/osteo/pg-vistas-cranio.webp', title: 'HCO₃⁻: O Componente Metabólico', alt: 'Como Identificar as Vistas do Crânio' },
+  { image: '/images/osteo/pg-cranio.webp', title: 'Os Quatro Distúrbios Primários', alt: 'Crânio — Estrutura e Comparação' },
+  { image: '/images/osteo/pg-mapa-torax.webp', title: 'Verifique a Compensação', alt: 'Mapa Visual do Tórax Veterinário' },
+  { image: '/images/osteo/pg-sacro.webp', title: 'Casos Comentados', alt: 'Sacro — Identificação e Comparação' },
 ];
 
 const carrossel2 = [
-  { image: '/images/osteo/pg-denticao.webp', title: 'Dentição e Arcadas Dentárias', tag: 'Vol. 6 · Crânio' },
-  { image: '/images/osteo/pg-cavidade-nasal.webp', title: 'Cavidade Nasal e Conchas', tag: 'Vol. 6 · Crânio' },
-  { image: '/images/osteo/pg-maxila.webp', title: 'Maxila, Incisivo e Zigomático', tag: 'Vol. 6 · Crânio' },
-  { image: '/images/osteo/pg-neurocranio.webp', title: 'Neurocrânio e Viscerocrânio', tag: 'Vol. 6 · Crânio' },
-  { image: '/images/osteo/pg-base-cranio.webp', title: 'Base do Crânio', tag: 'Vol. 6 · Crânio' },
-  { image: '/images/osteo/pg-seios-paranasais.webp', title: 'Seios Paranasais', tag: 'Vol. 6 · Crânio' },
-  { image: '/images/osteo/pg-arcadas-dentarias.webp', title: 'Arcadas Dentárias e Tipos de Dentes', tag: 'Vol. 6 · Crânio' },
-  { image: '/images/osteo/pg-orbita.webp', title: 'Órbita e Cavidade Orbital', tag: 'Vol. 6 · Crânio' },
+  { image: '/images/osteo/pg-denticao.webp', title: 'Compensação na Acidose Metabólica', alt: 'Dentição e Arcadas Dentárias' },
+  { image: '/images/osteo/pg-cavidade-nasal.webp', title: 'Como Calcular o Gap Aniônico', alt: 'Cavidade Nasal e Conchas' },
+  { image: '/images/osteo/pg-maxila.webp', title: 'Albumina e Gap Corrigido', alt: 'Maxila, Incisivo e Zigomático' },
+  { image: '/images/osteo/pg-neurocranio.webp', title: 'Como Reconhecer Distúrbios Mistos', alt: 'Neurocrânio e Viscerocrânio' },
+  { image: '/images/osteo/pg-base-cranio.webp', title: 'PaO₂ Depende do Contexto', alt: 'Base do Crânio' },
+  { image: '/images/osteo/pg-seios-paranasais.webp', title: 'Relação PaO₂/FiO₂', alt: 'Seios Paranasais' },
+  { image: '/images/osteo/pg-arcadas-dentarias.webp', title: 'Roteiro de Interpretação', alt: 'Arcadas Dentárias e Tipos de Dentes' },
+  { image: '/images/osteo/pg-orbita.webp', title: 'Fórmulas e Siglas', alt: 'Órbita e Cavidade Orbital' },
 ];
 
 export default function Page() {
   const offerRef = useRef<HTMLDivElement>(null);
   const handleCtaClick = () => offerRef.current?.scrollIntoView({ behavior: 'smooth' });
   return (
-    <main className="min-h-screen" style={{ backgroundColor: '#F3EBDD' }}>
+    <main className="min-h-screen" style={{ backgroundColor: '#E8F5F4' }}>
       <TopBar />
       <HeroSection onCtaClick={handleCtaClick} />
       <ProductCarousel
-        title="Conheça a Osteologia Veterinária por Dentro"
-        subtitle="Veja como o conteúdo foi organizado para você bater o olho, identificar a estrutura e entender exatamente o que está estudando."
+        title="Conheça o Guia de Gasometria por Dentro"
+        subtitle="Veja como os conceitos, as etapas de interpretação e os casos foram organizados para ajudar você a entender o conjunto dos resultados."
         items={carrossel1}
-        bg="#FBF8F2"
+        bg="#FAFBFC"
       />
       <HowItWorks />
       <WhatYouGet />
       <SubjectsSection />
       <ProductCarousel
-        title="Identifique, Compare e Diferencie com Mais Clareza"
-        subtitle="Cada tipo de página ajuda você a reconhecer estruturas, comparar diferenças e revisar os pontos que mais geram dúvida."
+        title="Relacione, Interprete e Revise com Mais Clareza"
+        subtitle="Cada tipo de página ajuda você a acompanhar o raciocínio e revisar os pontos que mais geram dúvida."
         flowSteps={[
-          ['Identificação Visual', 'Veja o osso e identifique suas principais estruturas.'],
-          ['Como Reconhecer', 'Entenda quais características ajudam a reconhecer cada peça.'],
-          ['Como Saber o Lado', 'Use os acidentes ósseos para diferenciar direita e esquerda.'],
-          ['Não Confunda', 'Compare estruturas parecidas e veja o que diferencia uma da outra.'],
-          ['Comparação entre Espécies', 'Compare canino, equino, bovino e suíno lado a lado.'],
+          ['Fluxogramas de Interpretação', 'Acompanhe a ordem de leitura e as perguntas que orientam cada etapa.'],
+          ['Explicações Visuais', 'Entenda as relações entre os parâmetros e os mecanismos dos distúrbios.'],
+          ['Comparações de Padrões', 'Observe diferenças entre alterações respiratórias, metabólicas e respostas esperadas.'],
+          ['Fórmulas e Consulta', 'Encontre os cálculos e as siglas apresentados no material para apoiar sua revisão.'],
+          ['Casos Comentados', 'Pratique com resultados fictícios e confira o raciocínio explicado.'],
         ]}
         items={carrossel2}
         reverse={true}
-        bg="#FBF8F2"
+        bg="#FAFBFC"
       />
       <Testimonials />
       <BonusSection />

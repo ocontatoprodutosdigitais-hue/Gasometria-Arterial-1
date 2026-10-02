@@ -11,6 +11,7 @@ interface ProductCarouselProps {
   items: Array<{
     image: string;
     title: string;
+    alt?: string;
     tag?: string;
   }>;
   reverse?: boolean;
@@ -18,13 +19,13 @@ interface ProductCarouselProps {
   landscape?: boolean;
 }
 
-function CarouselCard({ title, image, tag }: { title: string; image: string; tag?: string }) {
+function CarouselCard({ title, image, alt, tag }: { title: string; image: string; alt?: string; tag?: string }) {
   if (image) {
     return (
-      <div className="relative w-full h-full rounded-2xl overflow-hidden" style={{ backgroundColor: '#FBF8F2' }}>
+      <div className="relative w-full h-full rounded-2xl overflow-hidden" style={{ backgroundColor: '#FAFBFC' }}>
         <img
           src={image}
-          alt={title}
+          alt={alt ?? title}
           className="w-full h-full object-contain"
           decoding="async"
           loading="lazy"
@@ -36,32 +37,32 @@ function CarouselCard({ title, image, tag }: { title: string; image: string; tag
   return (
     <div
       className="relative w-full h-full rounded-2xl flex flex-col items-center justify-center gap-3 p-4"
-      style={{ backgroundColor: '#FBF8F2', border: '1.5px dashed #9D4E35', boxShadow: '0 8px 22px rgba(47, 41, 37, 0.08)' }}
+      style={{ backgroundColor: '#FAFBFC', border: '1.5px dashed #087F8C', boxShadow: '0 8px 22px rgba(20,43,73, 0.08)' }}
     >
       {tag && (
         <span
           className="absolute top-3 left-3 rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide"
-          style={{ backgroundColor: '#F3EBDD', color: '#9D4E35', border: '1px solid rgba(157, 78, 53, 0.25)' }}
+          style={{ backgroundColor: '#E8F5F4', color: '#087F8C', border: '1px solid rgba(8,127,140, 0.25)' }}
         >
           {tag}
         </span>
       )}
       <span
         className="flex items-center justify-center rounded-full text-lg"
-        style={{ width: '44px', height: '44px', backgroundColor: 'rgba(157, 78, 53, 0.12)', color: '#9D4E35', border: '1px solid rgba(157, 78, 53, 0.5)' }}
+        style={{ width: '44px', height: '44px', backgroundColor: 'rgba(8,127,140, 0.12)', color: '#087F8C', border: '1px solid rgba(8,127,140, 0.5)' }}
         aria-hidden="true"
       >
         +
       </span>
-      <p className="text-center font-grotesk text-sm sm:text-base leading-snug" style={{ color: '#2F2925' }}>
+      <p className="text-center font-grotesk text-sm sm:text-base leading-snug" style={{ color: '#24364B' }}>
         {title}
       </p>
-      <p className="text-center text-[10px] sm:text-xs leading-snug" style={{ color: '#8A7862' }}>
+      <p className="text-center text-[10px] sm:text-xs leading-snug" style={{ color: '#526176' }}>
         Página em breve
       </p>
       <div
         className="absolute bottom-0 left-0 right-0 h-0.5 rounded-b-2xl"
-        style={{ backgroundColor: '#9D4E35' }}
+        style={{ backgroundColor: '#087F8C' }}
       />
     </div>
   );
@@ -85,14 +86,14 @@ export function ProductCarousel({ title, subtitle, note, flowSteps, items, rever
       <div className="mobile-content">
         {/* Título e Subtítulo */}
         <div className="flex flex-col items-center text-center space-y-3 md:space-y-4 mb-12 md:mb-16">
-          <h2 className="font-grotesk text-3xl sm:text-4xl md:text-5xl leading-tight text-pretty" style={{ color: '#5A3A27' }}>
+          <h2 className="font-grotesk text-3xl sm:text-4xl md:text-5xl leading-tight text-pretty" style={{ color: '#142B49' }}>
             {title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-2xl" style={{ color: '#8A7862' }}>
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-center max-w-2xl" style={{ color: '#526176' }}>
             {subtitle}
           </p>
           {note && (
-            <p className="text-xs sm:text-sm leading-relaxed text-center max-w-2xl" style={{ color: '#8A7862' }}>
+            <p className="text-xs sm:text-sm leading-relaxed text-center max-w-2xl" style={{ color: '#526176' }}>
               {note}
             </p>
           )}
@@ -106,8 +107,8 @@ export function ProductCarousel({ title, subtitle, note, flowSteps, items, rever
                   <div
                     className="w-full rounded-2xl px-5 py-3.5 text-center"
                     style={{
-                      background: '#2F2925',
-                      boxShadow: '0 8px 20px rgba(47, 41, 37, 0.14)',
+                      background: '#142B49',
+                      boxShadow: '0 8px 20px rgba(20,43,73, 0.14)',
                     }}
                   >
                     <p
@@ -116,12 +117,12 @@ export function ProductCarousel({ title, subtitle, note, flowSteps, items, rever
                     >
                       {name}
                     </p>
-                    <p className="mt-0.5 text-xs sm:text-sm" style={{ color: 'rgba(251,248,242,0.8)' }}>
+                    <p className="mt-0.5 text-xs sm:text-sm" style={{ color: 'rgba(255,255,255, 0.8)' }}>
                       {desc}
                     </p>
                   </div>
                   {idx < flowSteps.length - 1 && (
-                    <ArrowDown size={18} strokeWidth={2.5} style={{ color: '#D8845E' }} aria-hidden="true" />
+                    <ArrowDown size={18} strokeWidth={2.5} style={{ color: '#F7D8D1' }} aria-hidden="true" />
                   )}
                 </div>
               ))}
@@ -178,7 +179,7 @@ export function ProductCarousel({ title, subtitle, note, flowSteps, items, rever
           <div className={`carousel-track ${reverse ? 'backward' : 'forward'}`}>
             {trackItems.map((item, idx) => (
               <div key={idx} className={`carousel-item${landscape ? ' landscape' : ''}`}>
-                <CarouselCard title={item.title} image={item.image} tag={item.tag} />
+                <CarouselCard title={item.title} image={item.image} alt={item.alt} tag={item.tag} />
               </div>
             ))}
           </div>

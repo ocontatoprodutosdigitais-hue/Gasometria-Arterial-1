@@ -1,120 +1,134 @@
-import { Bone, Compass, Layers, Boxes, Skull } from 'lucide-react';
+import { BookOpen, Scale, ListOrdered, GitCompare, Wind, ClipboardCheck } from 'lucide-react';
 
 type Block = {
   badge: string;
   title: string;
-  icon: typeof Bone;
+  icon: typeof BookOpen;
   accent: string;
   items: string[];
   description: string;
 };
 
-const accent = '#9D4E35';
+const accent = '#087F8C';
 
 const blocks: Block[] = [
   {
-    badge: 'FUNDAMENTOS',
-    title: 'Fundamentos',
-    icon: Compass,
+    badge: 'FUNDAMENTOS E PARÂMETROS',
+    title: 'Fundamentos e Parâmetros',
+    icon: BookOpen,
     accent,
     items: [
-      'Divisão do esqueleto',
-      'Classificação dos ossos',
-      'Termos de posição e direção',
-      'Planos anatômicos',
-      'Principais acidentes ósseos',
-      'Orientação de peças',
+      'Como estudar com o guia',
+      'Mapa do conteúdo',
+      'Visão geral da interpretação',
+      'O que a gasometria avalia',
+      'Amostra arterial e venosa',
+      'Como ler um laudo',
+      'Valores de referência',
+      'pH, PaCO₂ e HCO₃⁻',
+      'PaO₂, SaO₂ e SpO₂',
+      'Excesso de base e lactato',
+      'Qualidade da amostra',
     ],
-    description: 'Construa a base visual e a linguagem necessária antes de avançar para as regiões.',
+    description: 'Entenda o que cada dado representa antes de interpretar o conjunto.',
   },
   {
-    badge: 'MEMBRO TORÁCICO',
-    title: 'Membro Torácico',
-    icon: Bone,
+    badge: 'EQUILÍBRIO ÁCIDO-BASE',
+    title: 'Equilíbrio Ácido-Base',
+    icon: Scale,
     accent,
     items: [
-      'Escápula',
-      'Úmero',
-      'Rádio',
-      'Ulna',
-      'Carpo',
-      'Metacarpos',
-      'Falanges',
-      'Vistas e acidentes ósseos',
+      'Ácidos, bases e tampões',
+      'Papel dos pulmões e dos rins',
+      'Relação entre pH, CO₂ e bicarbonato',
+      'Ventilação e oxigenação',
+      'Os quatro distúrbios primários',
+      'O que é compensação',
     ],
-    description: 'Reconheça e oriente os ossos do membro torácico com diferentes vistas e comparações.',
+    description: 'Construa a base para compreender os mecanismos das alterações.',
   },
   {
-    badge: 'MEMBRO PÉLVICO',
-    title: 'Membro Pélvico',
-    icon: Bone,
+    badge: 'SEQUÊNCIA E DISTÚRBIOS',
+    title: 'Sequência e Distúrbios',
+    icon: ListOrdered,
     accent,
     items: [
-      'Pelve',
-      'Fêmur',
-      'Patela',
-      'Tíbia',
-      'Fíbula',
-      'Tarso',
-      'Metatarsos',
-      'Falanges',
+      'Contexto antes dos números',
+      'Avaliação do pH',
+      'Relação entre os componentes',
+      'Verificação da compensação',
+      'Alterações associadas',
+      'Oxigenação e síntese',
+      'Acidose respiratória',
+      'Alcalose respiratória',
+      'Acidose metabólica',
+      'Alcalose metabólica',
     ],
-    description: 'Identifique as estruturas do membro pélvico e as principais diferenças entre espécies.',
+    description: 'Siga uma ordem de leitura e entenda os principais padrões ácido-base.',
   },
   {
-    badge: 'COLUNA VERTEBRAL',
-    title: 'Coluna Vertebral',
-    icon: Layers,
+    badge: 'COMPENSAÇÃO E DISTÚRBIOS MISTOS',
+    title: 'Compensação e Distúrbios Mistos',
+    icon: GitCompare,
     accent,
     items: [
-      'Vértebras cervicais',
-      'Vértebras torácicas',
-      'Vértebras lombares',
-      'Vértebras sacrais',
-      'Vértebras caudais',
-      'Atlas e áxis',
+      'Fórmula de Winter',
+      'Resposta na alcalose metabólica',
+      'Distúrbios respiratórios agudos e crônicos',
+      'Cálculo do gap aniônico',
+      'Albumina e gap corrigido',
+      'Acidose metabólica e gap',
+      'Delta gap e razão delta',
+      'Reconhecimento de distúrbios mistos',
+      'Investigação com pH na faixa usual',
     ],
-    description: 'Diferencie regiões e características vertebrais, incluindo as duas primeiras cervicais.',
+    description: 'Compare a resposta observada com a esperada e reconheça pistas de alterações associadas.',
   },
   {
-    badge: 'TÓRAX',
-    title: 'Tórax',
-    icon: Boxes,
+    badge: 'OXIGENAÇÃO',
+    title: 'Oxigenação',
+    icon: Wind,
     accent,
     items: [
-      'Costelas',
-      'Esterno',
-      'Principais acidentes',
-      'Relações anatômicas',
+      'PaO₂ e contexto',
+      'Relação PaO₂/FiO₂',
+      'Gradiente alvéolo-arterial',
+      'Mecanismos de hipoxemia',
+      'Curva da oxi-hemoglobina',
+      'Oxigênio no sangue e nos tecidos',
     ],
-    description: 'Organize visualmente o esqueleto torácico e suas relações anatômicas.',
+    description: 'Relacione os resultados ao oxigênio ofertado e às condições da avaliação.',
   },
   {
-    badge: 'CRÂNIO',
-    title: 'Crânio',
-    icon: Skull,
+    badge: 'CASOS E REVISÃO FINAL',
+    title: 'Casos e Revisão Final',
+    icon: ClipboardCheck,
     accent,
     items: [
-      'Vistas do crânio',
-      'Principais ossos do crânio',
-      'Estruturas cranianas',
-      'Mandíbula',
-      'Diferenças entre espécies',
+      '14 casos comentados',
+      'Padrões respiratórios e metabólicos',
+      'Distúrbios mistos',
+      'Casos de oxigenação',
+      'Leitura integrada',
+      'Erros frequentes',
+      'Roteiro de interpretação',
+      'Fórmulas e siglas',
+      'Checklist de estudo',
     ],
-    description: 'Facilite a identificação de uma das regiões mais complexas da Osteologia.',
+    description: 'Pratique a leitura do conjunto e consulte os pontos essenciais para revisar.',
   },
 ];
 
 export function SubjectsSection() {
   return (
-    <section className="w-full py-16 md:py-24" style={{ backgroundColor: '#F3EBDD' }}>
+    <section className="w-full py-16 md:py-24" style={{ backgroundColor: '#E8F5F4' }}>
       <div className="mobile-content">
         <div className="mx-auto mb-10 flex max-w-3xl flex-col items-center gap-4 text-center md:mb-14">
-          <h2 className="font-grotesk text-3xl leading-tight text-pretty sm:text-4xl md:text-5xl" style={{ color: '#5A3A27' }}>
-            Veja Tudo o Que Você Vai Encontrar no Material
+          <h2 className="font-grotesk text-3xl leading-tight text-pretty sm:text-4xl md:text-5xl" style={{ color: '#142B49' }}>
+            Veja Tudo o Que Você Vai Encontrar no Guia
           </h2>
-          <p className="max-w-2xl text-sm leading-relaxed sm:text-base md:text-lg" style={{ color: '#8A7862' }}>
-            O conteúdo foi dividido por regiões anatômicas para você localizar rapidamente o que precisa estudar e entender cada estrutura com mais clareza.
+          <p className="max-w-2xl text-sm leading-relaxed sm:text-base md:text-lg" style={{ color: '#526176' }}>
+            Dos parâmetros do laudo à interpretação integrada, encontre os assuntos organizados para estudar, revisar e consultar com mais clareza.
           </p>
         </div>
 
@@ -125,7 +139,7 @@ export function SubjectsSection() {
               <article
                 key={block.badge}
                 className="flex flex-col rounded-[18px] border p-6 sm:p-7"
-                style={{ backgroundColor: '#FBF8F2', borderColor: 'rgba(90,58,39,0.15)', boxShadow: '0 8px 24px rgba(47,41,37,0.06)' }}
+                style={{ backgroundColor: '#FFFFFF', borderColor: '#DCE5EC', boxShadow: '0 8px 24px rgba(20,43,73, 0.06)' }}
               >
                 <div className="flex items-center gap-3">
                   <span
@@ -141,7 +155,7 @@ export function SubjectsSection() {
                     >
                       {block.badge}
                     </span>
-                    <h3 className="font-grotesk text-lg leading-tight sm:text-xl" style={{ color: '#5A3A27' }}>
+                    <h3 className="font-grotesk text-lg leading-tight sm:text-xl" style={{ color: '#142B49' }}>
                       {block.title}
                     </h3>
                   </div>
@@ -149,7 +163,7 @@ export function SubjectsSection() {
 
                 <ul className="mt-5 grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-2">
                   {block.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#2F2925' }}>
+                    <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#24364B' }}>
                       <span
                         className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full"
                         style={{ backgroundColor: block.accent }}
@@ -160,7 +174,7 @@ export function SubjectsSection() {
                   ))}
                 </ul>
 
-                <p className="mt-5 border-t pt-4 text-sm leading-relaxed" style={{ color: '#8A7862', borderColor: 'rgba(90,58,39,0.15)' }}>
+                <p className="mt-5 border-t pt-4 text-sm leading-relaxed" style={{ color: '#526176', borderColor: '#DCE5EC' }}>
                   {block.description}
                 </p>
               </article>

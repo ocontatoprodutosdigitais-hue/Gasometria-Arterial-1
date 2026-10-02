@@ -1,25 +1,8 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-
 export function TopBar() {
-  const [today, setToday] = useState('');
-
-  useEffect(() => {
-    const formatted = new Intl.DateTimeFormat('pt-BR', {
-      day: '2-digit',
-      month: 'long',
-      timeZone: 'America/Sao_Paulo',
-    })
-      .format(new Date())
-      .toUpperCase();
-    setToday(formatted);
-  }, []);
-
   return (
     <div
       className="relative w-full animate-in fade-in duration-500"
-      style={{ backgroundColor: '#2F2925', borderBottom: '1px solid rgba(255,255,255,0.15)' }}
+      style={{ backgroundColor: '#142B49', borderBottom: '1px solid rgba(255,255,255, 0.15)' }}
     >
       <div className="py-2.5 sm:py-3">
         <div
@@ -30,7 +13,7 @@ export function TopBar() {
             className="text-xs sm:text-sm font-semibold tracking-wide"
             style={{ color: '#FFFFFF' }}
           >
-            {'\uD83C\uDF81'} OFERTA ESPECIAL SOMENTE HOJE{today ? ` \u2022 ${today}` : ''}
+            {'\uD83C\uDF81'} GUIA VISUAL DE GASOMETRIA ARTERIAL {'\u2022'} POR R$ 24,90
           </span>
         </div>
       </div>
