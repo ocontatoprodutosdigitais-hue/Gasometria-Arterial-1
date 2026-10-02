@@ -10,6 +10,7 @@ import { SubjectsSection } from '@/components/subjects-section';
 import { PricingSection } from '@/components/pricing-section';
 import { BonusSection } from '@/components/bonus-section';
 import { Testimonials } from '@/components/testimonials';
+import { Depoimentos } from '@/components/depoimentos';
 import { Guarantee } from '@/components/guarantee';
 import { FAQ } from '@/components/faq';
 import { FinalCta } from '@/components/final-cta';
@@ -69,6 +70,7 @@ export default function Page() {
         bg="#FAFBFC"
       />
       <Testimonials />
+      <Depoimentos />
       <BonusSection />
       <div ref={offerRef}><PricingSection /></div>
       <Guarantee />
